@@ -1,0 +1,25 @@
+body {
+  background-color: rgb(136, 51, 51);
+  margin: 0;
+  text-align: center;
+}
+
+#canvasScreen {
+  position: fixed;
+  z-index: 2;
+  left: calc(100% / 2 - 300px);
+  top: 3rem;
+  width: 600px;
+  height: 400px;
+  border-radius: 4px;
+  border: 2px solid gray;
+  box-shadow: 4px 4px 8px rgba(27, 18, 18, 0.548);
+}
+
+.hero{
+  width: 600px;
+  margin: 3rem auto;
+  color: antiquewhite;
+  padding: 2rem;
+  box-sizing: border-box;
+}
