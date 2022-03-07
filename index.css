@@ -7,13 +7,13 @@ body {
 #canvasScreen {
   position: fixed;
   z-index: 2;
-  left: calc(100% / 2 - 300px);
-  top: 3rem;
-  width: 600px;
-  height: 400px;
-  border-radius: 4px;
-  border: 2px solid gray;
-  box-shadow: 4px 4px 8px rgba(27, 18, 18, 0.548);
+  /* left: calc(100% / 2 - 300px); */
+  top: 0;
+  /* width: 600px; */
+  /* height: 400px; */
+  /* border-radius: 4px; */
+  /* border: 2px solid gray; */
+  /* box-shadow: 4px 4px 8px rgba(27, 18, 18, 0.548); */
 }
 
 .hero{
