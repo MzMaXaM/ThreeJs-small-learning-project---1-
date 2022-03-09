@@ -3,6 +3,7 @@ const
   scene = new THREE.Scene(),
   canvasWidth = window.innerWidth,
   canvasHeight = window.innerHeight,
+  showScore = document.getElementById('show-score'),
   fov = 60,
   aspect = canvasWidth / canvasHeight,
   near = 0.1,
@@ -27,6 +28,7 @@ const
 let
   once = true,
   gravity = 0.2,
+  score = 0,
   picky;
 
 screenRender.id = 'canvasScreen'
@@ -51,23 +53,25 @@ function animate() { //main function
   renderer.render(scene, camera);
 }
 
-function cubeAction(){//this function will animate the cube
+function cubeAction() {//this function will animate the cube
   cube.rotation.x += 0.02
   cube.rotation.y += 0.02
   cube.position.y -= gravity
   if (cube.position.y < -25) {
+    score -= 15
+    showScore.innerText = score
     newCicle()
-  }  
+  }
 }
 
-function newCicle(){//reset the cube position
-    cube.position.y = 25
-    cube.position.x = rendomiser(-10, 10)
-    cube.material.color.set(newColor())
-    if (picky){
-      picky.visible = true
-    }
-    once = true  
+function newCicle() {//reset the cube position
+  cube.position.y = 25
+  cube.position.x = rendomiser(-10, 10)
+  cube.material.color.set(newColor())
+  if (picky) {
+    picky.visible = true
+  }
+  once = true
 }
 
 function rendomiser(min, max) { //helper function to randomize the stuff
@@ -89,6 +93,8 @@ function checkPointer() {//check if the cursor is on top of the cube
     picky = intersects[0].object
     once = false
     picky.visible = false
+    score += 10
+    showScore.innerText = score
 
     newCicle()
   }
